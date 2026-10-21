@@ -30,6 +30,9 @@ The unsafe controls belong to the test harness and establish that the fixture
 can detect requests. Their hits are reported separately from the sample's hits.
 A successful sample run demonstrates the setup with this pinned package.
 
+[See the recorded passing run and deliberately failing regression](verification/README.md),
+including the raw JSON reports from both Node versions.
+
 ## Test your application
 
 Edit **[fetcher.mjs](fetcher.mjs)** to import and call your application's real

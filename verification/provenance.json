@@ -1,0 +1,59 @@
+{
+  "harness_commit": "ac0d4906592a5c41c27785b7a4327d449bc10da9",
+  "protected": {
+    "commit": "6689a83d1786f6a6530a397daba6de0008b06720",
+    "run_id": 39525119477,
+    "jobs": [
+      {
+        "id": 118977830020,
+        "name": "Node 24",
+        "conclusion": "success"
+      },
+      {
+        "id": 118977830637,
+        "name": "Node 22",
+        "conclusion": "success"
+      }
+    ],
+    "artifacts": [
+      {
+        "id": 12313150454,
+        "name": "ssrf-report-node24-6689a83d1786f6a6530a397daba6de0008b06720",
+        "digest": "sha256:529925a1f12e384b0b073f9055e04c64ea8f8fd86c39dcb361ec98aa47013592"
+      },
+      {
+        "id": 12313015295,
+        "name": "ssrf-report-node22-6689a83d1786f6a6530a397daba6de0008b06720",
+        "digest": "sha256:1713d01dd49c7b6f84e82eaafb4b03ecee130d82dc13fa4a61b732c2bedcbdf9"
+      }
+    ]
+  },
+  "unsafe": {
+    "commit": "5b34f58a9546ba9d918a1be290a91e3cdfdecc2d",
+    "run_id": 39525269768,
+    "jobs": [
+      {
+        "id": 118978299327,
+        "name": "Node 22",
+        "conclusion": "failure"
+      },
+      {
+        "id": 118978299535,
+        "name": "Node 24",
+        "conclusion": "failure"
+      }
+    ],
+    "artifacts": [
+      {
+        "id": 12313425325,
+        "name": "ssrf-report-node24-5b34f58a9546ba9d918a1be290a91e3cdfdecc2d",
+        "digest": "sha256:d7b68c0dd493b2350e5e021667a04cd7adb3ec88502dd6418e5eace999d805c2"
+      },
+      {
+        "id": 12313205659,
+        "name": "ssrf-report-node22-5b34f58a9546ba9d918a1be290a91e3cdfdecc2d",
+        "digest": "sha256:168010b20653aae17ef16ec51320247c6804c8540e529bec7fce8fc2b9bb9066"
+      }
+    ]
+  }
+}
