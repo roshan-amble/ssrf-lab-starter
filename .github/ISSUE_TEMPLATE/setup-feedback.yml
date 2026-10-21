@@ -1,0 +1,26 @@
+name: Setup feedback
+description: Tell us whether you ran the sample, connected your own fetcher, or got stuck.
+title: 'Setup feedback: '
+body:
+  - type: dropdown
+    id: outcome
+    attributes:
+      label: How far did you get?
+      options:
+        - Ran the sample successfully
+        - Connected my application's fetcher
+        - Got stuck during setup
+    validations:
+      required: true
+  - type: input
+    id: run
+    attributes:
+      label: Actions run link (optional)
+      description: Share a public run link if you can.
+  - type: textarea
+    id: feedback
+    attributes:
+      label: What worked or got in the way?
+      description: The confusing step, an error message, or a suggestion is useful.
+    validations:
+      required: true

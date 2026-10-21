@@ -1,0 +1,46 @@
+name: SSRF check
+
+on:
+  workflow_dispatch:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  ssrf:
+    name: Node ${{ matrix.node }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        node: ['22', '24']
+    steps:
+      - name: Check out your code
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        with:
+          persist-credentials: false
+      - name: Set up Node.js
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+      - name: Install your fetcher
+        run: npm ci --ignore-scripts
+      - name: Test your fetcher
+        id: ssrf
+        uses: roshan-amble/ssrf-lab@ac0d4906592a5c41c27785b7a4327d449bc10da9
+        with:
+          fetcher-module: fetcher.mjs
+      - name: Save the report, including failed checks
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: ssrf-report-node${{ matrix.node }}-${{ github.sha }}
+          path: |
+            ${{ steps.ssrf.outputs.report-path }}
+            ${{ steps.ssrf.outputs.errors-path }}
+          if-no-files-found: warn
+          retention-days: 14

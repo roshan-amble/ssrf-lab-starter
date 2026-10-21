@@ -1,0 +1,14 @@
+{
+  "name": "ssrf-lab-starter",
+  "version": "0.0.0",
+  "private": true,
+  "description": "A working CI starter for testing a Node.js URL fetcher with ssrf-lab.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "dependencies": {
+    "guarded-fetch": "0.1.5"
+  }
+}
